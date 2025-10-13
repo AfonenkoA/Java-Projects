@@ -1,0 +1,22 @@
+project:
+  type: book
+
+book:
+  title: "Курсовые проекты Java"
+  author:
+    - Афоненко Анатолий
+  date: today
+  chapters:
+    - index.qmd
+    - report.qmd
+    - social-network/classic.qmd
+    - social-network/image.qmd
+    - social-network/short-text.qmd
+
+profile:
+  group:
+    - [html,pdf-book,pdf-artcl]
+
+lang: ru
+bibliography: references.bib
+engine: knitr
