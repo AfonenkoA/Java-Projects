@@ -1,0 +1,1 @@
+Get-ChildItem -Include "*.qmd"  -Recurse | Measure-Object | Select-Object Count

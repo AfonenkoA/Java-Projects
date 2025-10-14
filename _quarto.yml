@@ -9,9 +9,93 @@ book:
   chapters:
     - index.qmd
     - report.qmd
-    - social-network/classic.qmd
-    - social-network/image.qmd
-    - social-network/short-text.qmd
+    - part: Разработка
+      chapters:
+        - code/ai-chat.qmd
+        - code/bug-tracker.qmd
+    - part: Сделки    
+      chapters:
+        - deal/auto.qmd
+        - deal/bulletin-board.qmd
+        - deal/realt.qmd
+    - part: "Азартные игры"
+      chapters:    
+        - gambling/betting.qmd
+        - gambling/casino.qmd
+    - part: Хостинг
+      chapters:
+        - hosting/music.qmd
+        - hosting/site.qmd
+        - hosting/video.qmd
+    - part: Управление
+      chapters:
+      -  management/applicant.qmd
+      -  management/crm.qmd
+      -  management/help-desk.qmd
+      -  management/pharmacy.qmd
+      -  management/student.qmd
+      -  management/warehouse.qmd
+    - part: Аренда
+      chapters:
+        - rent/apartment.qmd
+        - rent/auto-leasing.qmd
+        - rent/auto-sharing.qmd
+        - rent/hostels.qmd
+        - rent/personal-mobility.qmd
+        - rent/taxi.qmd
+        - rent/travel.qmd
+    - part: Поиск
+      chapters:
+        - search-platform/job.qmd
+        - search-platform/psychologist.qmd
+        - search-platform/specialist.qmd
+    - part: Сервисы
+      chapters:
+        - service/banking.qmd
+        - service/calendar.qmd
+        - service/cinema.qmd
+        - service/cloud-storage.qmd
+        - service/cryptocurrency-exchange.qmd
+        - service/discount-cards.qmd
+        - service/discounts-and-promotions.qmd
+        - service/education.qmd
+        - service/exam-seating-arrangement.qmd
+        - service/expanse-manager.qmd
+        - service/food-delivery.qmd
+        - service/insurance.qmd
+        - service/investment.qmd
+        - service/library.qmd
+        - service/mobile-operator.qmd
+        - service/news.qmd
+        - service/notes.qmd
+        - service/polls.qmd
+        - service/quiz.qmd
+        - service/weather.qmd
+    - part: "Социальные сети"
+      chapters:
+        - social-network/classic.qmd
+        - social-network/dating.qmd
+        - social-network/image.qmd
+        - social-network/messanger.qmd
+        - social-network/short-text.qmd
+    - part: Магазины
+      chapters:
+        - store/book.qmd
+        - store/building-materials.qmd
+        - store/clothing.qmd
+        - store/consumer-electronics.qmd
+        - store/fishing.qmd
+        - store/flowers.qmd
+        - store/furniture.qmd
+        - store/grocery.qmd
+        - store/marketplace.qmd
+        - store/sports.qmd
+        - store/tile.qmd
+    - part: Билеты
+      chapters:
+        - tickets/avia.qmd
+        - tickets/bus.qmd
+        - tickets/railway.qmd
 
 profile:
   group:
