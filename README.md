@@ -1,11 +1,11 @@
 # HTML
 
 ``` bash
-quarto render --to html --profile dev,html
+quarto render --to html --profile html
 ```
 
 # PDF
 
 ``` bash
-quarto render --to pdf --profile dev,pdf-artcl
+quarto render --to pdf --profile pdf-artcl
 ```
