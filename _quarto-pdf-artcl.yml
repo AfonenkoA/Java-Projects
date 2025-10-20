@@ -11,8 +11,9 @@ format:
     sansfont: Times New Roman
     monofont: Noto Sans Mono Black
     top-level-division: section
-    toc-depth: 2
-    number-depth: 3
+    toc-depth: 1
+    number-sections: true
+    number-depth: 2
     include-in-header:
       - text: |
          \usepackage{fontspec}
