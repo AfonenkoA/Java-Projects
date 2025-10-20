@@ -1,32 +1,11 @@
 # Книжный магазин
 
-# Software Requirements Specification for Online Bookstore
+## Overall Description
 
-## 1. Introduction
-
-### 1.1 Purpose
-This document describes the software requirements specification for an online bookstore system built using Java with Jakarta EE and PostgreSQL database.
-
-### 1.2 Scope
 The system will be a web-based application that allows users to browse, search, and purchase books online. It will include user management, product catalog, shopping cart, order processing, and administrative functions.
 
-### 1.3 Definitions, Acronyms, and Abbreviations
-- **Jakarta EE**: Enterprise Edition of Java platform
-- **SRS**: Software Requirements Specification
-- **UI**: User Interface
-- **API**: Application Programming Interface
+## Product Functions
 
-### 1.4 References
-- IEEE Std 830-1998
-- Jakarta EE Specification
-- PostgreSQL Documentation
-
-## 2. Overall Description
-
-### 2.1 Product Perspective
-The system is a standalone web application implementing a complete online bookstore with customer-facing and administrative interfaces.
-
-### 2.2 Product Functions
 - User registration and authentication
 - Book catalog browsing and searching
 - Shopping cart management
@@ -38,45 +17,25 @@ The system is a standalone web application implementing a complete online bookst
 - Wishlist functionality
 - Recommendation system
 
-## 3. System Features
+## System Features
 
-### 3.1 User Account Management
-
-#### Description and Priority
-Provides user registration, authentication, and account management capabilities. Priority: High
-
-#### Stimulus/Response Sequences
-- **Scenario 1:** Successful Registration
-  - *Stimulus:* Guest clicks "Register", enters email, username, password, and confirms password
-  - *Response:* System validates uniqueness, hashes password, saves user data, sends confirmation email
-- **Scenario 2:** Successful Login
-  - *Stimulus:* User enters credentials on login form
-  - *Response:* System verifies credentials, creates session, redirects to homepage
-- **Scenario 3:** Password Recovery
-  - *Stimulus:* User clicks "Forgot Password", enters registered email
-  - *Response:* System sends password reset link to email
-
-#### Functional Requirements
-- **USR-1**: System shall provide user registration form with email verification
-- **USR-2**: System shall enforce unique username and email constraints
-- **USR-3**: System shall provide secure password hashing using BCrypt
-- **USR-4**: System shall maintain user session with appropriate timeout
-- **USR-5**: System shall provide role-based access control (Customer, Admin)
-
-### 3.2 Book Catalog Management
+### Book Catalog Management
 
 #### Description and Priority
+
 Manages the book inventory including adding, updating, and categorizing books. Priority: High
 
 #### Stimulus/Response Sequences
+
 - **Scenario 1:** Adding New Book
-  - *Stimulus:* Admin enters book details (title, author, ISBN, price, description, stock)
-  - *Response:* System validates ISBN uniqueness, saves book data, updates catalog
+  * *Stimulus:* Admin enters book details (title, author, ISBN, price, description, stock)
+  * *Response:* System validates ISBN uniqueness, saves book data, updates catalog
 - **Scenario 2:** Updating Book Information
-  - *Stimulus:* Admin modifies book price or description
-  - *Response:* System updates book record and reflects changes immediately
+  * *Stimulus:* Admin modifies book price or description
+  * *Response:* System updates book record and reflects changes immediately
 
 #### Functional Requirements
+
 - **CAT-1**: System shall support book categorization by genre, author, and publisher
 - **CAT-2**: System shall maintain book inventory with real-time stock updates
 - **CAT-3**: System shall validate ISBN format and uniqueness
@@ -86,37 +45,41 @@ Manages the book inventory including adding, updating, and categorizing books. P
 ### 3.3 Product Search and Browsing
 
 #### Description and Priority
+
 Enables users to find books through various search and filtering options. Priority: High
 
 #### Stimulus/Response Sequences
+
 - **Scenario 1:** Text Search
-  - *Stimulus:* User enters search query in search box
-  - *Response:* System returns relevant books matching title, author, or description
+  * *Stimulus:* User enters search query in search box
+  * *Response:* System returns relevant books matching title, author, or description
 - **Scenario 2:** Advanced Filtering
-  - *Stimulus:* User applies filters by genre, price range, rating
-  - *Response:* System displays filtered results with pagination
+  * *Stimulus:* User applies filters by genre, price range, rating
+  * *Response:* System displays filtered results with pagination
 
 #### Functional Requirements
+
 - **SRCH-1**: System shall provide full-text search across book titles and authors
 - **SRCH-2**: System shall support filtering by multiple criteria simultaneously
-- **SRCH-3**: System shall implement search result pagination (20 items per page)
-- **SRCH-4**: System shall display search results with relevance scoring
-- **SRCH-5**: System shall maintain search history for authenticated users
+- **SRCH-3**: System shall display search results with relevance scoring
+- **SRCH-4**: System shall maintain search history for authenticated users
 
-### 3.4 Shopping Cart Management
+### Shopping Cart Management
 
 #### Description and Priority
 Manages user shopping cart operations including add, update, and remove items. Priority: High
 
 #### Stimulus/Response Sequences
+
 - **Scenario 1:** Adding Item to Cart
-  - *Stimulus:* User clicks "Add to Cart" for a book
-  - *Response:* System adds item to cart, updates cart total, shows confirmation
+  * *Stimulus:* User clicks "Add to Cart" for a book
+  * *Response:* System adds item to cart, updates cart total, shows confirmation
 - **Scenario 2:** Updating Cart Quantity
-  - *Stimulus:* User modifies quantity of cart item
-  - *Response:* System recalculates subtotal, validates stock availability
+  * *Stimulus:* User modifies quantity of cart item
+  * *Response:* System recalculates subtotal, validates stock availability
 
 #### Functional Requirements
+
 - **CART-1**: System shall maintain cart contents across user sessions
 - **CART-2**: System shall validate stock availability before cart operations
 - **CART-3**: System shall calculate real-time pricing including taxes
@@ -126,168 +89,89 @@ Manages user shopping cart operations including add, update, and remove items. P
 ### 3.5 Order Processing System
 
 #### Description and Priority
+
 Handles complete order lifecycle from creation to fulfillment. Priority: High
 
 #### Stimulus/Response Sequences
+
 - **Scenario 1:** Order Creation
-  - *Stimulus:* User proceeds to checkout from cart
-  - *Response:* System creates order, reserves stock, generates order number
+  * *Stimulus:* User proceeds to checkout from cart
+  * *Response:* System creates order, reserves stock, generates order number
 - **Scenario 2:** Payment Processing
-  - *Stimulus:* User submits payment information
-  - *Response:* System processes payment, updates order status, sends confirmation
+  * *Stimulus:* User submits payment information
+  * *Response:* System processes payment, updates order status, sends confirmation
 
 #### Functional Requirements
-- **ORD-1**: System shall generate unique order numbers sequentially
-- **ORD-2**: System shall support multiple payment methods (Credit Card, PayPal)
-- **ORD-3**: System shall maintain order history for each user
-- **ORD-4**: System shall update inventory upon successful order completion
-- **ORD-5**: System shall send order confirmation emails automatically
 
-### 3.6 Review and Rating System
+- **ORD-1**: System shall generate unique order numbers sequentially
+- **ORD-2**: System shall maintain order history for each user
+- **ORD-3**: System shall update inventory upon successful order completion
+
+### Review and Rating System
 
 #### Description and Priority
+
 Allows users to submit reviews and ratings for purchased books. Priority: Medium
 
 #### Stimulus/Response Sequences
+
 - **Scenario 1:** Submitting Review
-  - *Stimulus:* User writes review and rating for purchased book
-  - *Response:* System validates purchase, saves review, updates book rating
+  * *Stimulus:* User writes review and rating for purchased book
+  * *Response:* System validates purchase, saves review, updates book rating
 - **Scenario 2:** Review Moderation
-  - *Stimulus:* Admin flags inappropriate review
-  - *Response:* System hides review pending moderation
+  * *Stimulus:* Admin flags inappropriate review
+  * *Response:* System hides review pending moderation
 
 #### Functional Requirements
+
 - **REV-1**: System shall allow reviews only from verified purchasers
 - **REV-2**: System shall calculate and display average ratings for books
 - **REV-3**: System shall support review reporting and moderation
 - **REV-4**: System shall limit one review per user per book
 - **REV-5**: System shall sort reviews by helpfulness and date
 
-### 3.7 Wishlist Functionality
+### Wishlist Functionality
 
 #### Description and Priority
+
 Enables users to create and manage personal book wishlists. Priority: Medium
 
 #### Stimulus/Response Sequences
+
 - **Scenario 1:** Adding to Wishlist
-  - *Stimulus:* User clicks "Add to Wishlist" on book page
-  - *Response:* System adds book to user's wishlist, shows confirmation
+  * *Stimulus:* User clicks "Add to Wishlist" on book page
+  * *Response:* System adds book to user's wishlist, shows confirmation
 - **Scenario 2:** Wishlist to Cart
-  - *Stimulus:* User selects multiple items from wishlist to add to cart
-  - *Response:* System moves selected items to shopping cart
+  * *Stimulus:* User selects multiple items from wishlist to add to cart
+  * *Response:* System moves selected items to shopping cart
 
 #### Functional Requirements
+
 - **WISH-1**: System shall support multiple named wishlists per user
 - **WISH-2**: System shall provide wishlist sharing capabilities
 - **WISH-3**: System shall notify users of price drops on wishlisted items
 - **WISH-4**: System shall display wishlist item availability status
 - **WISH-5**: System shall support wishlist item prioritization
 
-### 3.8 Recommendation Engine
+### Administrative Dashboard
 
 #### Description and Priority
-Provides personalized book recommendations based on user behavior. Priority: Medium
 
-#### Stimulus/Response Sequences
-- **Scenario 1:** Browsing Recommendations
-  - *Stimulus:* User views homepage or book details page
-  - *Response:* System displays personalized recommendations
-- **Scenario 2:** Recommendation Feedback
-  - *Stimulus:* User clicks "Not Interested" on recommendation
-  - *Response:* System updates recommendation algorithm
-
-#### Functional Requirements
-- **REC-1**: System shall generate recommendations based on purchase history
-- **REC-2**: System shall consider browsing behavior for recommendations
-- **REC-3**: System shall implement collaborative filtering algorithms
-- **REC-4**: System shall provide "Similar Books" recommendations
-- **REC-5**: System shall allow recommendation feedback to improve accuracy
-
-### 3.9 Administrative Dashboard
-
-#### Description and Priority
 Provides comprehensive management interface for administrative users. Priority: High
 
 #### Stimulus/Response Sequences
+
 - **Scenario 1:** Sales Reporting
-  - *Stimulus:* Admin requests sales report for specific period
-  - *Response:* System generates report with charts and export options
+  * *Stimulus:* Admin requests sales report for specific period
+  * *Response:* System generates report with charts and export options
 - **Scenario 2:** Inventory Management
-  - *Stimulus:* Admin updates stock levels for multiple books
-  - *Response:* System updates inventory, triggers restock alerts if needed
+  * *Stimulus:* Admin updates stock levels for multiple books
+  * *Response:* System updates inventory, triggers restock alerts if needed
 
 #### Functional Requirements
+
 - **ADMIN-1**: System shall provide real-time sales analytics and dashboards
 - **ADMIN-2**: System shall support bulk operations for inventory management
 - **ADMIN-3**: System shall generate PDF and Excel reports
 - **ADMIN-4**: System shall provide user management capabilities for admins
 - **ADMIN-5**: System shall maintain audit logs of all administrative actions
-
-### 3.10 Payment Integration
-
-#### Description and Priority
-Handles secure payment processing with external payment gateways. Priority: High
-
-#### Stimulus/Response Sequences
-- **Scenario 1:** Credit Card Payment
-  - *Stimulus:* User enters credit card details and submits payment
-  - *Response:* System processes payment through gateway, confirms transaction
-- **Scenario 2:** Payment Failure
-  - *Stimulus:* Payment gateway declines transaction
-  - *Response:* System displays error message, allows retry
-
-#### Functional Requirements
-- **PAY-1**: System shall integrate with multiple payment gateways
-- **PAY-2**: System shall not store raw payment card information
-- **PAY-3**: System shall handle payment refunds and cancellations
-- **PAY-4**: System shall support transaction status webhooks
-- **PAY-5**: System shall maintain payment transaction history
-
-## 4. External Interface Requirements
-
-### 4.1 User Interfaces
-- Web-based responsive interface using Jakarta Server Faces
-- RESTful APIs for mobile client compatibility
-- Administrative interface with advanced functionality
-
-### 4.2 Hardware Interfaces
-- Standard web server hardware requirements
-- Database server with adequate storage for book catalog
-
-### 4.3 Software Interfaces
-- Jakarta EE 9+ Application Server
-- PostgreSQL 12+ Database
-- Payment Gateway APIs (Stripe/PayPal)
-- Email SMTP service
-
-### 4.4 Communications Interfaces
-- HTTP/HTTPS protocols
-- REST API endpoints
-- SMTP for email notifications
-- WebSocket for real-time updates
-
-## 5. Non-Functional Requirements
-
-### 5.1 Performance Requirements
-- Page load time under 2 seconds
-- Support for 1000 concurrent users
-- Database queries optimized with indexing
-
-### 5.2 Security Requirements
-- Password hashing with salt
-- SQL injection prevention
-- XSS and CSRF protection
-- HTTPS enforcement
-
-### 5.3 Availability Requirements
-- 99.5% uptime requirement
-- Database backup every 24 hours
-
-### 5.4 Maintainability
-- Modular Jakarta EE components
-- Comprehensive logging
-- Database migration scripts
-
----
-
-*This SRS document follows IEEE 830 standard and provides comprehensive requirements for the online bookstore system implementation using Java Jakarta EE and PostgreSQL.*

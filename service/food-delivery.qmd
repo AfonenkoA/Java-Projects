@@ -1,0 +1,196 @@
+# Сервис доставки еды
+
+## Overall Description
+
+The system will be a comprehensive food delivery platform allowing customers to order food from multiple restaurants, with order management, payment processing, and delivery tracking capabilities.
+
+## Product Functions
+
+- User registration and authentication
+- Restaurant management and menu catalog
+- Food search and filtering
+- Shopping cart management
+- Order placement and tracking
+- Payment processing integration
+- Delivery management system
+- Review and rating system
+- Admin dashboard and analytics
+
+## System Features
+
+### Restaurant and Menu Management
+
+#### Description and Priority
+
+Enables restaurant owners to manage their establishments, menus, and operational details. Priority: High
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Restaurant Registration
+  * *Stimulus:* Approved restaurant owner adds new restaurant with details and documentation
+  * *Response:* System creates restaurant profile with pending status until admin verification
+- **Scenario 2:** Menu Item Management
+  * *Stimulus:* Restaurant owner adds new menu item with name, description, price, category, and dietary information
+  * *Response:* System validates data, stores images in CDN, and updates menu immediately
+- **Scenario 3:** Availability Management
+  * *Stimulus:* Restaurant owner updates operating hours or temporarily closes
+  * *Response:* System prevents new orders during closed hours and notifies customers of changes
+
+#### Functional Requirements
+
+- **REST-1**: System shall allow restaurant owners to create and manage multiple restaurant profiles
+- **REST-2**: System shall support hierarchical menu categories and subcategories
+- **REST-3**: System shall manage item variations (size, spice level, toppings)
+- **REST-4**: System shall track inventory levels for menu items
+- **REST-5**: System shall handle special offers and discount management
+- **REST-6**: System shall provide real-time order queue for restaurants
+
+### Food Discovery and Search
+
+#### Description and Priority
+
+Advanced search and filtering system to help customers find restaurants and menu items. Priority: High
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Location-Based Search
+  * *Stimulus:* Customer enters delivery address or uses geolocation
+  * *Response:* System displays available restaurants sorted by distance and rating
+- **Scenario 2:** Advanced Filtering
+  * *Stimulus:* Customer applies filters (cuisine, price range, dietary restrictions, rating)
+  * *Response:* System returns filtered results with relevance scoring
+- **Scenario 3:** Search Suggestions
+  * *Stimulus:* Customer types in search bar
+  * *Response:* System provides real-time suggestions for restaurants and menu items
+
+#### Functional Requirements
+
+- **SRCH-1**: System shall implement full-text search across restaurant names and menu items
+- **SRCH-2**: System shall support location-based restaurant discovery
+- **SRCH-3**: System shall provide faceted search with multiple filter criteria
+- **SRCH-4**: System shall implement search ranking based on popularity and ratings
+- **SRCH-5**: System shall track search history and provide personalized recommendations
+
+### Shopping Cart Management
+
+#### Description and Priority
+
+Manages customer shopping cart with real-time pricing, tax calculation, and delivery fee estimation. Priority: High
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Add to Cart
+  * *Stimulus:* Customer selects menu item with customizations and adds to cart
+  * *Response:* System updates cart total, calculates delivery time, and shows item count
+- **Scenario 2:** Cart Modification
+  * *Stimulus:* Customer updates item quantity or removes items
+  * *Response:* System recalculates totals and updates estimated delivery time
+- **Scenario 3:** Cross-Restaurant Validation
+  * *Stimulus:* Customer tries to add items from different restaurant
+  * *Response:* System warns about clearing current cart and confirms action
+
+#### Functional Requirements
+
+- **CART-1**: System shall maintain persistent shopping cart across sessions
+- **CART-2**: System shall calculate real-time pricing including taxes and fees
+- **CART-3**: System shall validate item availability before order placement
+- **CART-4**: System shall handle minimum order amounts and delivery thresholds
+- **CART-5**: System shall support saving carts for later use
+
+### Order Processing System
+
+#### Description and Priority
+
+Comprehensive order management from placement to completion with real-time status updates. Priority: High
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Order Placement
+  * *Stimulus:* Customer confirms order with payment method and special instructions
+  * *Response:* System processes payment, creates order, notifies restaurant, and assigns delivery
+- **Scenario 2:** Order Status Updates
+  * *Stimulus:* Restaurant accepts order and updates preparation status
+  * *Response:* System notifies customer and delivery personnel of status changes
+- **Scenario 3:** Order Modification
+  * *Stimulus:* Customer requests order cancellation within allowed timeframe
+  * *Response:* System validates cancellation policy, processes refund if applicable
+
+#### Functional Requirements
+
+- **ORD-1**: System shall create orders with unique tracking numbers
+- **ORD-2**: System shall enforce order preparation time limits
+- **ORD-3**: System shall handle order splitting for multiple restaurants
+- **ORD-4**: System shall provide real-time order status tracking
+- **ORD-5**: System shall manage order history with detailed receipts
+- **ORD-6**: System shall implement automated order confirmation emails
+
+### Delivery Management
+
+#### Description and Priority
+
+Coordinates delivery personnel assignment, route optimization, and real-time tracking. Priority: High
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Delivery Assignment
+  * *Stimulus:* System identifies available delivery personnel near restaurant
+  * *Response:* System assigns delivery, notifies driver, and provides route details
+- **Scenario 2:** Live Tracking
+  * *Stimulus:* Delivery personnel updates location via mobile app
+  * *Response:* System updates customer map with estimated delivery time
+- **Scenario 3:** Delivery Completion
+  * *Stimulus:* Delivery personnel confirms order delivery
+  * *Response:* System completes order, processes driver payment, and triggers rating system
+
+#### Functional Requirements
+
+- **DEL-1**: System shall assign deliveries based on proximity and workload
+- **DEL-2**: System shall provide route optimization using mapping APIs
+- **DEL-3**: System shall track delivery personnel availability and location
+- **DEL-4**: System shall handle delivery exceptions and reassignments
+- **DEL-5**: System shall calculate and process delivery personnel payments
+
+### Review and Rating System
+
+#### Description and Priority
+
+Manages customer feedback for restaurants, delivery service, and overall experience. Priority: Medium
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Post-Order Rating
+  * *Stimulus:* Customer receives rating prompt after order completion
+  * *Response:* System records ratings, calculates averages, and updates restaurant scores
+- **Scenario 2:** Review Moderation
+  * *Stimulus:** Customer submits review with text and photos
+  * *Response:* System checks for inappropriate content and publishes after validation
+
+#### Functional Requirements
+
+- **REV-1**: System shall collect ratings for restaurant food, delivery time, and packaging
+- **REV-2**: System shall calculate weighted average ratings
+- **REV-3**: System shall moderate user-generated content for policy compliance
+- **REV-4**: System shall handle review responses from restaurant owners
+
+### Admin Dashboard and Analytics
+
+#### Description and Priority
+
+Comprehensive administration interface with business intelligence and reporting capabilities. Priority: Medium
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Restaurant Approval
+  * *Stimulus:** Admin reviews new restaurant application and documents
+  * *Response:* System updates restaurant status and notifies owner
+- **Scenario 2:** Business Analytics
+  * *Stimulus:** Management requests sales report for specific period
+  * *Response:* System generates detailed report with charts and export options
+
+#### Functional Requirements
+
+- **ADM-1**: System shall provide real-time business metrics dashboard
+- **ADM-2**: System shall generate custom reports with filtering options
+- **ADM-3**: System shall manage user accounts and content moderation
+- **ADM-4**: System shall handle commission calculations and payout processing
+- **ADM-5**: System shall monitor system performance and error tracking

@@ -1,1 +1,179 @@
 # Криптовалютная биржа
+
+## 2. Overall Description
+
+The project implements a comprehensive cryptocurrency exchange platform that enables users to trade various cryptocurrencies securely. The system will support real-time trading, portfolio management, and administrative oversight.
+
+## 3. Product Functions
+
+- User registration and authentication with two-factor security
+- Cryptocurrency wallet management
+- Trading operations (buy/sell orders)
+- Real-time market data and price tracking
+- Order book management
+- Transaction history and reporting
+- Portfolio valuation and analytics
+- Administrative dashboard and user management
+
+## System Features
+
+### Cryptocurrency Wallet Management
+
+#### Description and Priority
+
+Enables users to manage multiple cryptocurrency wallets, view balances, and perform deposits/withdrawals. Priority: High
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Deposit cryptocurrency
+    * *Stimulus:* User navigates to wallet, selects deposit, copies deposit address
+    * *Response:* System generates unique deposit address and updates balance upon confirmation
+- **Scenario 2:** Withdraw cryptocurrency
+    * *Stimulus:* User enters withdrawal address, amount, and confirms with 2FA
+    * *Response:* System validates balance, processes withdrawal, and updates transaction history
+- **Scenario 3:** Balance inquiry
+    * *Stimulus:* User views wallet dashboard
+    * *Response:* System displays current balances for all supported cryptocurrencies
+
+#### Functional Requirements
+
+- **WALL-1**: System shall generate unique deposit addresses for each user and cryptocurrency
+- **WALL-2**: System shall validate withdrawal addresses format
+- **WALL-3**: System shall enforce minimum/maximum withdrawal limits
+- **WALL-4**: System shall provide real-time balance updates
+- **WALL-5**: System shall track transaction confirmations
+
+### Trading Platform
+
+#### Description and Priority
+
+Provides core trading functionality including order placement, order book management, and trade execution. Priority: High
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Place buy order
+    * *Stimulus:* User selects trading pair, enters price and quantity, submits buy order
+    * *Response:* System validates funds, places order in order book, executes if match found
+- **Scenario 2:** Market order execution
+    * *Stimulus:* User places market order at current best price
+    * *Response:* System immediately executes order at best available market price
+- **Scenario 3:** Order cancellation
+    * *Stimulus:* User cancels pending order
+    * *Response:* System removes order from order book and releases reserved funds
+
+#### Functional Requirements
+
+- **TRADE-1**: System shall maintain real-time order books for all trading pairs
+- **TRADE-2**: System shall match buy and sell orders based on price-time priority
+- **TRADE-3**: System shall support limit, market, and stop-limit order types
+- **TRADE-4**: System shall execute trades atomically
+- **TRADE-5**: System shall update order book in real-time
+
+### Portfolio Management
+
+#### Description and Priority
+
+Enables users to track their cryptocurrency holdings, view performance metrics, and analyze portfolio distribution. Priority: Medium
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Portfolio overview
+    * *Stimulus:* User accesses portfolio dashboard
+    * *Response:* System displays current holdings, total value, and 24h performance
+- **Scenario 2:** Performance analytics
+    * *Stimulus:* User requests portfolio performance report for specific period
+    * *Response:* System generates detailed performance analysis with charts
+
+#### Functional Requirements
+
+- **PORT-1**: System shall calculate real-time portfolio valuation
+- **PORT-2**: System shall provide portfolio performance analytics
+- **PORT-3**: System shall display asset allocation charts
+- **PORT-4**: System shall generate portfolio historical reports
+
+### Market Data Display
+
+#### Description and Priority
+
+Provides real-time market data, price charts, and trading pair information. Priority: High
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Real-time price updates
+    * *Stimulus:* User views market data page
+    * *Response:* System displays real-time price feeds with WebSocket updates
+- **Scenario 2:** Chart analysis
+    * *Stimulus:* User selects different timeframes for price chart
+    * *Response:* System updates chart with historical price data
+
+#### Functional Requirements
+
+- **MRKT-1**: System shall provide real-time price feeds for all trading pairs
+- **MRKT-2**: System shall display interactive price charts with multiple timeframes
+- **MRKT-3**: System shall show 24h trading volume and price changes
+- **MRKT-4**: System shall implement WebSocket for live data updates
+
+### Order Management
+
+#### Description and Priority
+
+Manages user orders, including open orders, order history, and execution reports. Priority: Medium
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** View open orders
+    * *Stimulus:* User navigates to orders section
+    * *Response:* System displays all pending and partially filled orders
+- **Scenario 2:** Order modification
+    * *Stimulus:* User modifies pending order parameters
+    * *Response:* System validates changes and updates order in order book
+
+#### Functional Requirements
+
+- **ORD-1**: System shall maintain complete order history for each user
+- **ORD-2**: System shall provide order status tracking
+- **ORD-3**: System shall allow order modification and cancellation
+- **ORD-4**: System shall generate trade execution reports
+
+### Transaction History
+
+#### Description and Priority
+
+Maintains complete audit trail of all financial transactions and trading activities. Priority: Medium
+
+#### Stimulus/Response Sequences
+
+- **Scenario 1:** Transaction filtering
+    * *Stimulus:* User applies filters to transaction history
+    * *Response:* System displays filtered transactions based on criteria
+- **Scenario 2:** Export transactions
+    * *Stimulus:* User exports transaction history for tax purposes
+    * *Response:* System generates CSV/PDF report with all transactions
+
+#### Functional Requirements
+
+- **TX-1**: System shall record all financial transactions
+- **TX-2**: System shall provide advanced filtering and search capabilities
+- **TX-3**: System shall generate exportable transaction reports
+- **TX-4**: System shall maintain immutable transaction records
+
+### Administration System
+
+#### Description and Priority
+
+Provides administrative interface for user management, system monitoring, and operational controls. Priority: Medium
+
+#### Stimulus/Response Sequences
+- **Scenario 1:** User account review
+    * *Stimulus:* Administrator reviews pending KYC verifications
+    * *Response:* System displays user documents and enables approval/rejection
+- **Scenario 2:** System health monitoring
+    * *Stimulus:* Administrator checks system dashboard
+    * *Response:* System displays performance metrics and alerts
+
+#### Functional Requirements
+
+- **ADMIN-1**: System shall provide user management interface
+- **ADMIN-2**: System shall display real-time system metrics
+- **ADMIN-3**: System shall enable manual trade supervision
+- **ADMIN-4**: System shall provide reporting tools for compliance

@@ -59,7 +59,6 @@ book:
         - service/discount-cards.qmd
         - service/discounts-and-promotions.qmd
         - service/education.qmd
-        - service/exam-seating-arrangement.qmd
         - service/expanse-manager.qmd
         - service/food-delivery.qmd
         - service/insurance.qmd
@@ -70,7 +69,6 @@ book:
         - service/notes.qmd
         - service/polls.qmd
         - service/quiz.qmd
-        - service/weather.qmd
     - part: "Социальные сети"
       chapters:
         - social-network/classic.qmd
@@ -90,7 +88,6 @@ book:
         - store/grocery.qmd
         - store/marketplace.qmd
         - store/sports.qmd
-        - store/tile.qmd
     - part: Билеты
       chapters:
         - tickets/avia.qmd
