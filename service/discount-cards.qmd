@@ -1,155 +1,170 @@
-# Сервис управления дискнонтными картами
+# Сервис управления дисконтными картами
 
-## Overall Description
+## Общее описание
 
-The system enables businesses to manage customer discount programs through a secure web interface.
+Система позволяет компаниям управлять дисконтными программами клиентов через защищенный веб-интерфейс.
 
-## Product Functions
+## Функции продукта
 
-- User authentication and authorization
-- Discount card lifecycle management
-- Customer account management
-- Transaction processing and history
-- Discount program configuration
-- Reporting and analytics
-- Bulk operations for card management
+- Аутентификация и авторизация пользователей
+- Управление жизненным циклом дисконтных карт
+- Управление счетами клиентов
+- Обработка и история транзакций
+- Настройка дисконтных программ
+- Отчетность и аналитика
+- Массовые операции по управлению картами
 
-## System Features
+## Функции системы
 
-### Discount Card Management
+### Управление дисконтными картами
 
-#### Description and Priority
+#### Описание и приоритет
 
-Comprehensive functionality for creating, activating, blocking, and managing discount cards throughout their lifecycle. Priority: High
+Комплексный функционал для создания, активации, блокировки и управления дисконтными картами на протяжении всего их жизненного цикла. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Card creation
-  * *Stimulus:* Administrator creates new card batch with specified parameters
-  * *Response:* System generates unique card numbers, stores in database, returns creation confirmation
-- **Scenario 2:** Card activation
-  * *Stimulus:* Customer registers card through web interface
-  * *Response:* System validates card existence, links to customer account, updates status to active
+- **Сценарий 1:** Создание карты
+* *Стимул:* Администратор создает новый пакет карт с заданными параметрами
+* *Ответ:* Система генерирует уникальные номера карт, сохраняет их в базе данных и возвращает подтверждение создания
+- **Сценарий 2:** Активация карты
+* *Стимул:* Клиент регистрирует карту через веб-интерфейс
+* *Ответ:* Система проверяет наличие карты, привязывает ее к учетной записи клиента и обновляет статус на «активная»
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **CARD-1:** System shall generate unique card numbers with configurable format
-- **CARD-2:** System shall support card statuses (New, Active, Blocked, Expired)
-- **CARD-3:** System shall allow bulk card creation with predefined parameters
-- **CARD-4:** System shall track card creation and activation dates
-- **CARD-5:** System shall enforce card expiration policies
+- **CARD-1:** Система должна генерировать уникальные номера карт в настраиваемом формате
+- **CARD-2:** Система должна поддерживать статусы карт (новая, активная, заблокированная, просроченная)
+- **CARD-3:** Система должна позволять массовое создание карт с предопределенными параметрами
+- **CARD-4:** Система должна отслеживать даты создания и активации карт
+- **CARD-5:** Система должна обеспечивать соблюдение срока действия карты Политики
 
-### Customer Account Management
+### Управление учётными записями клиентов
 
-#### Description and Priority
+#### Описание и приоритет
 
-Manages customer profiles, personal information, and their association with discount cards. Priority: High
+Управляет профилями клиентов, персональными данными и их привязкой к дисконтным картам. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Customer registration
-  * *Stimulus:* New customer completes registration form
-  * *Response:* System validates data uniqueness, creates customer account, sends confirmation
-- **Scenario 2:** Profile update
-  * *Stimulus:* Customer edits personal information
-  * *Response:* System validates changes, updates database, confirms successful modification
+- **Сценарий 1:** Регистрация клиента
+* *Стимул:* Новый клиент заполняет регистрационную форму
+* *Ответ:* Система проверяет уникальность данных, создает учетную запись клиента, отправляет подтверждение
+- **Сценарий 2:** Обновление профиля
+* *Стимул:* Клиент редактирует персональные данные
+* *Ответ:* Система проверяет изменения, обновляет базу данных, подтверждает успешное изменение
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **CUST-1:** System shall store customer contact information and demographics
-- **CUST-2:** System shall support multiple cards per customer account
-- **CUST-3:** System shall maintain customer registration history
-- **CUST-4:** System shall provide customer search functionality
-- **CUST-5:** System shall track customer tier levels based on spending
+- **CUST-1:** Система должна хранить контактную информацию и демографические данные клиента
+- **CUST-2:** Система должна поддерживать несколько карт для одного счета клиента
+- **CUST-3:** Система должна вести историю регистрации клиента
+- **CUST-4:** Система должна предоставлять функцию поиска клиента
+- **CUST-5:** Система должна отслеживать уровни клиентов на основе расходов
 
-### Transaction Processing
+### Обработка транзакций
 
-#### Description and Priority
+#### Описание и приоритет
 
-Handles discount applications during purchase transactions and maintains comprehensive audit trail. Priority: High
+Обработка заявок на скидку во время осуществляет контроль за транзакциями по закупкам и ведет подробный аудиторский след. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Purchase with discount
-  * *Stimulus:* Cashier scans card and enters purchase amount
-  * *Response:* System calculates discount, processes transaction, updates card balance
-- **Scenario 2:** Transaction reversal
-  * *Stimulus:* Operator requests transaction cancellation
-  * *Response:* System validates reversal conditions, creates reversal transaction, updates balances
+- **Сценарий 1:** Покупка со скидкой
+* *Стимул:* Кассир сканирует карту и вводит сумму покупки
+* *Ответ:* Система рассчитывает скидку, обрабатывает транзакцию, обновляет баланс карты
+- **Сценарий 2:** Отмена транзакции
+* *Стимул:* Оператор запрашивает отмену транзакции
+* *Ответ:* Система проверяет условия отмены, создает транзакцию отмены, обновляет баланс
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **TRAN-1:** System shall calculate discounts based on current card tier and program rules
-- **TRAN-2:** System shall maintain complete transaction history with timestamps
-- **TRAN-3:** System shall support transaction statuses (Completed, Reversed, Failed)
-- **TRAN-4:** System shall enforce minimum and maximum discount limits
-- **TRAN-5:** System shall provide real-time balance updates
+- **TRAN-1:** Система должна рассчитывать скидки на основе текущего уровня карты и правил программы
+- **TRAN-2:** Система должна хранить полную историю транзакций с временными метками
+- **TRAN-3:** Система должна поддерживать статусы транзакций (Завершено, Отменено, Не удалось)
+- **TRAN-4:** Система должна устанавливать минимальный и максимальный лимиты скидки
+- **TRAN-5:** Система должна предоставлять Обновление баланса в режиме реального времени
 
-### Discount Program Configuration
+### Конфигурация программы скидок
 
-#### Description and Priority
+#### Описание и приоритет
 
-Enables administrators to define and modify discount rules, tier structures, and promotional campaigns. Priority: Medium
+Позволяет администраторам определять и изменять правила скидок, структуру уровней и рекламные кампании. Приоритет: Средний
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Program creation
-  * *Stimulus:* Administrator defines new discount program with tier rules
-  * *Response:* System validates rule consistency, stores program configuration
-- **Scenario 2:** Tier modification
-  * *Stimulus:* Manager adjusts discount percentages for specific tier
-  * *Response:* System applies changes to future transactions, maintains audit log
+- **Сценарий 1:** Создание программы
+* *Стимул:* Администратор определяет новую программу скидок с правилами уровней
+* *Ответ:* Система проверяет согласованность правил, сохраняет конфигурацию программы
+- **Сценарий 2:** Изменение уровня
+* *Стимул:* Менеджер корректирует процент скидки для определенного уровня
+* *Ответ:* Система применяет изменения к будущим транзакциям, ведет журнал аудита
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **PROG-1:** System shall support configurable discount tiers with spending thresholds
-- **PROG-2:** System shall allow time-limited promotional discounts
-- **PROG-3:** System shall enable category-specific discount rules
-- **PROG-4:** System shall maintain program version history
-- **PROG-5:** System shall validate discount rule conflicts
+- **PROG-1:** Система должна поддерживать настраиваемые уровни скидок с пороговыми значениями расходов
+- **PROG-2:** Система должна разрешать ограниченные по времени промо-скидки
+- **PROG-3:** Система должна поддерживать правила скидок для отдельных категорий
+- **PROG-4:** Система должна вести историю версий программы
+- **PROG-5:** Система должна проверять конфликты правил скидок
 
-### Reporting and Analytics
+### Отчетность и аналитика
 
-#### Description and Priority
+#### Описание и приоритет
 
-Provides comprehensive reporting capabilities for business intelligence and program performance analysis. Priority: Medium
+Обеспечивает комплексные возможности создания отчетов для бизнес-аналитики и анализа эффективности программ. Приоритет: средний
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Report generation
-  * *Stimulus:* User selects report type and date range
-  * *Response:* System queries database, formats data, presents report in requested format
-- **Scenario 2:** Data export
-  * *Stimulus:* Manager requests data export for external analysis
-  * *Response:* System generates CSV/Excel file with selected data fields
+- **Сценарий 1:** Формирование отчета
+* *Стимул:* Пользователь выбирает тип отчета и диапазон дат
+* *Ответ:* Система запрашивает базу данных, форматирует данные и представляет отчет в требуемом формате
+- **Сценарий 2:** Экспорт данных
+* *Стимул:* Менеджер запрашивает экспорт данных для внешнего анализа
+* *Ответ:* Система формирует файл CSV/Excel
 
-#### Functional Requirements
+### Отчетность и аналитика
 
-- **REPT-1:** System shall generate card activation statistics reports
-- **REPT-2:** System shall provide transaction volume and value analytics
-- **REPT-3:** System shall calculate customer retention metrics
-- **REPT-4:** System shall support scheduled report generation
-- **REPT-5:** System shall export data in multiple formats (TXT, CSV)
+#### Описание и приоритет
 
-### Bulk Operations
+Обеспечивает комплексные возможности отчетности для бизнес-аналитики и анализа эффективности программ. Приоритет: Средний
 
-#### Description and Priority
+#### Последовательности стимулов/ответов
 
-Enables mass operations on cards and customer accounts for efficient management. Priority: Low
+- **Сценарий 1:** Формирование отчёта
+* *Стимул:* Пользователь выбирает тип отчёта и диапазон дат
+* *Ответ:* Система запрашивает базу данных, форматирует данные и представляет отчёт в требуемом формате
+- **Сценарий 2:** Экспорт данных
+* *Стимул:* Менеджер запрашивает экспорт данных для внешнего анализа
+* *Ответ:* Система генерирует файл CSV/Excel с выбранными полями данных
 
-#### Stimulus/Response Sequences
+#### Функциональные требования
 
-- **Scenario 1:** Bulk status update
-  * *Stimulus:* Administrator selects multiple cards for status change
-  * *Response:* System processes updates, provides summary of changes
-- **Scenario 2:** Mass notification
-  * *Stimulus:* Manager prepares message for customer segment
-  * *Response:* System delivers messages through configured channels
+- **REPT-1:** Система должна генерировать отчёты по статистике активации карт
+- **REPT-2:** Система должна предоставлять аналитику по объёму и стоимости транзакций
+- **REPT-3:** Система должна рассчитывать метрики удержания клиентов
+- **REPT-4:** Система должна поддерживать генерацию отчётов по расписанию
+- **REPT-5:** Система должна экспортировать данные в различные форматы (TXT, CSV)
 
-#### Functional Requirements
+### Массовые операции
 
-- **BULK-1:** System shall process bulk card status updates
-- **BULK-2:** System shall support mass customer communications
-- **BULK-3:** System shall handle batch card creation from templates
-- **BULK-4:** System shall provide progress tracking for long-running operations
-- **BULK-5:** System shall validate data integrity during bulk operations
+#### Описание и Приоритет
+
+Обеспечивает возможность массовых операций с картами и счетами клиентов для эффективного управления. Приоритет: низкий
+
+#### Последовательности стимулов/ответов
+
+- **Сценарий 1:** Массовое обновление статуса
+* *Стимул:* Администратор выбирает несколько карт для изменения статуса
+* *Ответ:* Система обрабатывает обновления, предоставляет сводку изменений
+- **Сценарий 2:** Массовое уведомление
+* *Стимул:* Менеджер готовит сообщение для клиентского сегмента
+* *Ответ:* Система доставляет сообщения по настроенным каналам
+
+#### Функциональные требования
+
+- **BULK-1:** Система должна обрабатывать массовые обновления статуса карт
+- **BULK-2:** Система должна поддерживать массовые коммуникации с клиентами
+- **BULK-3:** Система должна обрабатывать пакетное создание карт по шаблонам
+- **BULK-4:** Система должна обеспечивать отслеживание хода выполнения длительных операций
+- **BULK-5:** Система должна проверять целостность данных во время массовых операций

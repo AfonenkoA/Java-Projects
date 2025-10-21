@@ -1,196 +1,196 @@
 # Сервис доставки еды
 
-## Overall Description
+## Общее описание
 
-The system will be a comprehensive food delivery platform allowing customers to order food from multiple restaurants, with order management, payment processing, and delivery tracking capabilities.
+Система будет представлять собой комплексную платформу доставки еды, позволяющую клиентам заказывать еду из нескольких ресторанов с функциями управления заказами, обработки платежей и отслеживания доставки.
 
-## Product Functions
+## Функции продукта
 
-- User registration and authentication
-- Restaurant management and menu catalog
-- Food search and filtering
-- Shopping cart management
-- Order placement and tracking
-- Payment processing integration
-- Delivery management system
-- Review and rating system
-- Admin dashboard and analytics
+- Регистрация и аутентификация пользователей
+- Управление рестораном и каталог меню
+- Поиск и фильтрация блюд
+- Управление корзиной
+- Размещение и отслеживание заказов
+- Интеграция с обработкой платежей
+- Система управления доставкой
+- Система отзывов и рейтингов
+- Панель администратора и аналитика
 
-## System Features
+## Функции системы
 
-### Restaurant and Menu Management
+### Управление рестораном и меню
 
-#### Description and Priority
+#### Описание и приоритет
 
-Enables restaurant owners to manage their establishments, menus, and operational details. Priority: High
+Позволяет владельцам ресторанов управлять своими заведениями, меню и операционной деятельностью. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Restaurant Registration
-  * *Stimulus:* Approved restaurant owner adds new restaurant with details and documentation
-  * *Response:* System creates restaurant profile with pending status until admin verification
-- **Scenario 2:** Menu Item Management
-  * *Stimulus:* Restaurant owner adds new menu item with name, description, price, category, and dietary information
-  * *Response:* System validates data, stores images in CDN, and updates menu immediately
-- **Scenario 3:** Availability Management
-  * *Stimulus:* Restaurant owner updates operating hours or temporarily closes
-  * *Response:* System prevents new orders during closed hours and notifies customers of changes
+- **Сценарий 1:** Регистрация ресторана
+* *Стимул:* Утвержденный владелец ресторана добавляет новый ресторан с подробной информацией и документацией
+* *Ответ:* Система создает профиль ресторана со статусом ожидания до подтверждения администратором
+- **Сценарий 2:** Управление пунктами меню
+* *Стимул:* Владелец ресторана добавляет новый пункт меню с названием, описанием, ценой, категорией и информацией о диете
+* *Ответ:* Система проверяет данные, сохраняет изображения в CDN и немедленно обновляет меню
+- **Сценарий 3:** Управление доступностью
+* *Стимул:* Владелец ресторана обновляет часы работы или временно закрывает ресторан
+* *Ответ:* Система предотвращает новые заказы в нерабочее время и уведомляет клиентов об изменениях
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **REST-1**: System shall allow restaurant owners to create and manage multiple restaurant profiles
-- **REST-2**: System shall support hierarchical menu categories and subcategories
-- **REST-3**: System shall manage item variations (size, spice level, toppings)
-- **REST-4**: System shall track inventory levels for menu items
-- **REST-5**: System shall handle special offers and discount management
-- **REST-6**: System shall provide real-time order queue for restaurants
+- **REST-1**: Система должна позволять владельцам ресторанов создавать и управлять несколькими профилями ресторанов
+- **REST-2**: Система должна поддерживать Иерархические категории и подкатегории меню
+- **REST-3**: Система должна управлять вариациями блюд (размер, острота, начинки)
+- **REST-4**: Система должна отслеживать уровень запасов блюд в меню
+- **REST-5**: Система должна управлять специальными предложениями и скидками
+- **REST-6**: Система должна обеспечивать очередь заказов в режиме реального времени для ресторанов
 
-### Food Discovery and Search
+### Поиск и поиск блюд
 
-#### Description and Priority
+#### Описание и приоритет
 
-Advanced search and filtering system to help customers find restaurants and menu items. Priority: High
+Расширенная система поиска и фильтрации, помогающая клиентам находить рестораны и блюда в меню. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Location-Based Search
-  * *Stimulus:* Customer enters delivery address or uses geolocation
-  * *Response:* System displays available restaurants sorted by distance and rating
-- **Scenario 2:** Advanced Filtering
-  * *Stimulus:* Customer applies filters (cuisine, price range, dietary restrictions, rating)
-  * *Response:* System returns filtered results with relevance scoring
-- **Scenario 3:** Search Suggestions
-  * *Stimulus:* Customer types in search bar
-  * *Response:* System provides real-time suggestions for restaurants and menu items
+- **Сценарий 1:** Поиск по местоположению
+* *Стимул:* Клиент вводит адрес доставки или использует геолокацию
+* *Ответ:* Система отображает доступные рестораны, отсортированные по расстоянию и рейтингу
+- **Сценарий 2:** Расширенная фильтрация
+* *Стимул:* Клиент применяет фильтры (кухня, ценовой диапазон, диетические ограничения, рейтинг)
+* *Ответ:* Система возвращает отфильтрованные результаты с оценкой релевантности
+- **Сценарий 3:** Поисковые подсказки
+* *Стимул:* Клиент вводит данные в строке поиска
+* *Ответ:* Система предоставляет подсказки ресторанов и пунктов меню в режиме реального времени
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **SRCH-1**: System shall implement full-text search across restaurant names and menu items
-- **SRCH-2**: System shall support location-based restaurant discovery
-- **SRCH-3**: System shall provide faceted search with multiple filter criteria
-- **SRCH-4**: System shall implement search ranking based on popularity and ratings
-- **SRCH-5**: System shall track search history and provide personalized recommendations
+- **SRCH-1**: Система должна реализовать полнотекстовый поиск по названиям ресторанов и пунктам меню
+- **SRCH-2**: Система должна поддерживать поиск ресторанов по местоположению
+- **SRCH-3**: Система должна предоставлять фасетный поиск Поиск с несколькими критериями фильтрации
+- **SRCH-4**: Система должна реализовать ранжирование поиска на основе популярности и рейтингов.
+- **SRCH-5**: Система должна отслеживать историю поиска и предоставлять персонализированные рекомендации.
 
-### Shopping Cart Management
+### Управление корзиной покупок
 
-#### Description and Priority
+#### Описание и приоритет
 
-Manages customer shopping cart with real-time pricing, tax calculation, and delivery fee estimation. Priority: High
+Управляет корзиной покупок клиента, включая цены в режиме реального времени, расчет налогов и оценку стоимости доставки. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Add to Cart
-  * *Stimulus:* Customer selects menu item with customizations and adds to cart
-  * *Response:* System updates cart total, calculates delivery time, and shows item count
-- **Scenario 2:** Cart Modification
-  * *Stimulus:* Customer updates item quantity or removes items
-  * *Response:* System recalculates totals and updates estimated delivery time
-- **Scenario 3:** Cross-Restaurant Validation
-  * *Stimulus:* Customer tries to add items from different restaurant
-  * *Response:* System warns about clearing current cart and confirms action
+- **Сценарий 1:** Добавить в корзину
+* *Стимул:* Клиент выбирает пункт меню с настройками и добавляет его в корзину
+* *Ответ:* Система обновляет сумму в корзине, рассчитывает время доставки и отображает количество товаров
+- **Сценарий 2:** Изменение корзины
+* *Стимул:* Клиент обновляет количество товаров или удаляет их
+* *Ответ:* Система пересчитывает сумму и обновляет предполагаемое время доставки
+- **Сценарий 3:** Проверка соответствия между ресторанами
+* *Стимул:* Клиент пытается добавить товары из другого ресторана
+* *Ответ:* Система предупреждает об очистке текущей корзины и подтверждает действие
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **CART-1**: System shall maintain persistent shopping cart across sessions
-- **CART-2**: System shall calculate real-time pricing including taxes and fees
-- **CART-3**: System shall validate item availability before order placement
-- **CART-4**: System shall handle minimum order amounts and delivery thresholds
-- **CART-5**: System shall support saving carts for later use
+- **CART-1**: Система должна поддерживать постоянную корзину покупок между сеансами
+- **CART-2**: Система должна рассчитывать цены в режиме реального времени, включая налоги и сборы
+- **CART-3**: Система должна проверять наличие товара перед размещением заказа.
+- **CART-4**: Система должна учитывать минимальную сумму заказа и пороговые значения доставки.
+- **CART-5**: Система должна поддерживать сохранение корзин для последующего использования.
 
-### Order Processing System
+### Система обработки заказов
 
-#### Description and Priority
+#### Описание и приоритет
 
-Comprehensive order management from placement to completion with real-time status updates. Priority: High
+Комплексное управление заказами от размещения до завершения с обновлением статуса в режиме реального времени. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Order Placement
-  * *Stimulus:* Customer confirms order with payment method and special instructions
-  * *Response:* System processes payment, creates order, notifies restaurant, and assigns delivery
-- **Scenario 2:** Order Status Updates
-  * *Stimulus:* Restaurant accepts order and updates preparation status
-  * *Response:* System notifies customer and delivery personnel of status changes
-- **Scenario 3:** Order Modification
-  * *Stimulus:* Customer requests order cancellation within allowed timeframe
-  * *Response:* System validates cancellation policy, processes refund if applicable
+- **Сценарий 1:** Размещение заказа
+* *Стимул:* Клиент подтверждает заказ, указывая способ оплаты и особые инструкции
+* *Ответ:* Система обрабатывает оплату, создает заказ, уведомляет ресторан и назначает доставку
+- **Сценарий 2:** Обновление статуса заказа
+* *Стимул:* Ресторан принимает заказ и обновляет статус готовности
+* *Ответ:* Система уведомляет клиента и курьера об изменении статуса
+- **Сценарий 3:** Изменение заказа
+* *Стимул:* Клиент запрашивает отмену заказа в течение допустимого времени
+* *Ответ:* Система проверяет политику отмены, обрабатывает возврат средств, если применимо
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **ORD-1**: System shall create orders with unique tracking numbers
-- **ORD-2**: System shall enforce order preparation time limits
-- **ORD-3**: System shall handle order splitting for multiple restaurants
-- **ORD-4**: System shall provide real-time order status tracking
-- **ORD-5**: System shall manage order history with detailed receipts
-- **ORD-6**: System shall implement automated order confirmation emails
+- **ORD-1**: Система должна создавать заказы с уникальными номерами отслеживания
+- **ORD-2**: Система должна контролировать сроки подготовки заказа
+- **ORD-3**: Система должна обрабатывать разделение заказа для нескольких ресторанов
+- **ORD-4**: Система должна обеспечивать отслеживание статуса заказа в режиме реального времени.
+- **ORD-5**: Система должна управлять историей заказов с подробными чеками.
+- **ORD-6**: Система должна реализовывать автоматическую отправку электронных писем с подтверждением заказа.
 
-### Delivery Management
+### Управление доставкой
 
-#### Description and Priority
+#### Описание и приоритет
 
-Coordinates delivery personnel assignment, route optimization, and real-time tracking. Priority: High
+Координирует назначение курьеров, оптимизацию маршрутов и отслеживание в режиме реального времени. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Delivery Assignment
-  * *Stimulus:* System identifies available delivery personnel near restaurant
-  * *Response:* System assigns delivery, notifies driver, and provides route details
-- **Scenario 2:** Live Tracking
-  * *Stimulus:* Delivery personnel updates location via mobile app
-  * *Response:* System updates customer map with estimated delivery time
-- **Scenario 3:** Delivery Completion
-  * *Stimulus:* Delivery personnel confirms order delivery
-  * *Response:* System completes order, processes driver payment, and triggers rating system
+- **Сценарий 1:** Назначение доставки
+* *Стимул:* Система определяет доступного курьера рядом с рестораном
+* *Ответ:* Система назначает доставку, уведомляет водителя и предоставляет информацию о маршруте
+- **Сценарий 2:** Отслеживание в режиме реального времени
+* *Стимул:* Курьер обновляет местоположение через мобильное приложение
+* *Ответ:* Система обновляет карту клиента с указанием предполагаемого времени доставки
+- **Сценарий 3:** Завершение доставки
+* *Стимул:* Курьер подтверждает доставку заказа
+* *Ответ:* Система завершает заказ, обрабатывает оплату водителю и запускает систему рейтинга
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **DEL-1**: System shall assign deliveries based on proximity and workload
-- **DEL-2**: System shall provide route optimization using mapping APIs
-- **DEL-3**: System shall track delivery personnel availability and location
-- **DEL-4**: System shall handle delivery exceptions and reassignments
-- **DEL-5**: System shall calculate and process delivery personnel payments
+- **DEL-1**: Система должна назначать доставку с учетом расстояния и загруженности
+- **DEL-2**: Система должна обеспечивать оптимизацию маршрута с использованием картографических API
+- **DEL-3**: Система должна отслеживать доступность и местоположение курьера
+- **DEL-4**: Система должна обрабатывать исключения из правил доставки и переназначения.
+- **DEL-5**: Система должна рассчитывать и обрабатывать выплаты сотрудникам службы доставки.
 
-### Review and Rating System
+### Система отзывов и оценок
 
-#### Description and Priority
+#### Описание и приоритет
 
-Manages customer feedback for restaurants, delivery service, and overall experience. Priority: Medium
+Управляет отзывами клиентов о ресторанах, службе доставки и общем опыте. Приоритет: Средний
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Post-Order Rating
-  * *Stimulus:* Customer receives rating prompt after order completion
-  * *Response:* System records ratings, calculates averages, and updates restaurant scores
-- **Scenario 2:** Review Moderation
-  * *Stimulus:** Customer submits review with text and photos
-  * *Response:* System checks for inappropriate content and publishes after validation
+- **Сценарий 1:** Оценка после заказа
+* *Стимул:* Клиент получает запрос на оценку после завершения заказа
+* *Ответ:* Система регистрирует оценки, рассчитывает средние значения и обновляет баллы ресторана
+- **Сценарий 2:** Модерация отзывов
+* *Стимул:** Клиент отправляет отзыв с текстом и фотографиями
+* *Ответ:* Система проверяет отзыв на наличие недопустимого контента и публикует его после проверки
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **REV-1**: System shall collect ratings for restaurant food, delivery time, and packaging
-- **REV-2**: System shall calculate weighted average ratings
-- **REV-3**: System shall moderate user-generated content for policy compliance
-- **REV-4**: System shall handle review responses from restaurant owners
+- **РЕДАКЦИЯ-1**: Система должна собирать оценки блюд ресторана, времени доставки и упаковки
+- **РЕДАКЦИЯ-2**: Система должна рассчитывать средневзвешенные оценки
+- **РЕДАКЦИЯ-3**: Система должна модерировать пользовательский контент на предмет соответствия политике
+- **РЕДАКЦИЯ-4**: Система должна обрабатывать ответы на отзывы владельцев ресторанов
 
-### Admin Dashboard and Analytics
+### Панель управления и аналитика
 
-#### Description and Priority
+#### Описание и приоритет
 
-Comprehensive administration interface with business intelligence and reporting capabilities. Priority: Medium
+Комплексный интерфейс администрирования с возможностями бизнес-аналитики и отчетности. Приоритет: Средний
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Restaurant Approval
-  * *Stimulus:** Admin reviews new restaurant application and documents
-  * *Response:* System updates restaurant status and notifies owner
-- **Scenario 2:** Business Analytics
-  * *Stimulus:** Management requests sales report for specific period
-  * *Response:* System generates detailed report with charts and export options
+- **Сценарий 1:** Утверждение ресторана
+* *Стимул:** Администратор проверяет заявку и документы нового ресторана
+* *Ответ:* Система обновляет статус ресторана и уведомляет владельца
+- **Сценарий 2:** Бизнес-аналитика
+* *Стимул:** Руководство запрашивает отчет о продажах за определенный период
+* *Ответ:* Система генерирует подробный отчет с диаграммами и возможностями экспорта
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **ADM-1**: System shall provide real-time business metrics dashboard
-- **ADM-2**: System shall generate custom reports with filtering options
-- **ADM-3**: System shall manage user accounts and content moderation
-- **ADM-4**: System shall handle commission calculations and payout processing
-- **ADM-5**: System shall monitor system performance and error tracking
+- **ADM-1**: Система должна предоставлять панель бизнес-показателей в режиме реального времени
+- **ADM-2**: Система должна генерировать настраиваемые отчеты с возможностью фильтрации
+- **ADM-3**: Система должна управлять учетными записями пользователей и модерировать контент
+- **ADM-4**: Система должна выполнять расчет комиссий и обработку выплат
+- **ADM-5**: Система должна контролировать производительность системы и отслеживать ошибки

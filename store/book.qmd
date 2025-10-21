@@ -1,177 +1,176 @@
 # Книжный магазин
 
-## Overall Description
+## Общее описание
 
-The system will be a web-based application that allows users to browse, search, and purchase books online. It will include user management, product catalog, shopping cart, order processing, and administrative functions.
+Система будет представлять собой веб-приложение, позволяющее пользователям просматривать, искать и приобретать книги онлайн. Система будет включать в себя управление пользователями, каталог товаров, корзину покупок, обработку заказов и административные функции.
 
-## Product Functions
+## Функции продукта
 
-- User registration and authentication
-- Book catalog browsing and searching
-- Shopping cart management
-- Order processing and payment
-- User profile management
-- Book inventory management
-- Order fulfillment tracking
-- Review and rating system
-- Wishlist functionality
-- Recommendation system
+- Регистрация и аутентификация пользователей
+- Просмотр и поиск по каталогу книг
+- Управление корзиной покупок
+- Обработка заказов и оплата
+- Управление профилями пользователей
+- Управление запасами книг
+- Отслеживание выполнения заказов
+- Система отзывов и оценок
+- Функциональность списка желаний
 
-## System Features
+## Функции системы
 
-### Book Catalog Management
+### Управление каталогом книг
 
-#### Description and Priority
+#### Описание и приоритет
 
-Manages the book inventory including adding, updating, and categorizing books. Priority: High
+Управление запасами книг, включая добавление, обновление и категоризацию. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Adding New Book
-  * *Stimulus:* Admin enters book details (title, author, ISBN, price, description, stock)
-  * *Response:* System validates ISBN uniqueness, saves book data, updates catalog
-- **Scenario 2:** Updating Book Information
-  * *Stimulus:* Admin modifies book price or description
-  * *Response:* System updates book record and reflects changes immediately
+- **Сценарий 1:** Добавление новой книги
+* *Стимул:* Администратор вводит данные о книге (название, автор, ISBN, цена, описание, наличие на складе)
+* *Ответ:* Система проверяет уникальность ISBN, сохраняет данные о книге, обновляет каталог
+- **Сценарий 2:** Обновление информации о книге
+* *Стимул:* Администратор изменяет цену или описание книги
+* *Ответ:* Система обновляет запись о книге и немедленно отражает изменения
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **CAT-1**: System shall support book categorization by genre, author, and publisher
-- **CAT-2**: System shall maintain book inventory with real-time stock updates
-- **CAT-3**: System shall validate ISBN format and uniqueness
-- **CAT-4**: System shall support book images and detailed descriptions
-- **CAT-5**: System shall track book popularity based on views and purchases
+- **CAT-1**: Система должна поддерживать категоризацию книг по жанру, автору и издательству
+- **CAT-2**: Система должна вести учет запасов книг с обновлением информации о запасах в режиме реального времени
+- **CAT-3**: Система должна проверять формат и уникальность ISBN
+- **CAT-4**: Система должна поддерживать изображения книг и подробные описания
+- **CAT-5**: Система должна отслеживать книги Популярность на основе просмотров и покупок
 
-### 3.3 Product Search and Browsing
+### 3.3 Поиск и просмотр товаров
 
-#### Description and Priority
+#### Описание и приоритет
 
-Enables users to find books through various search and filtering options. Priority: High
+Позволяет пользователям находить книги с помощью различных параметров поиска и фильтрации. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Text Search
-  * *Stimulus:* User enters search query in search box
-  * *Response:* System returns relevant books matching title, author, or description
-- **Scenario 2:** Advanced Filtering
-  * *Stimulus:* User applies filters by genre, price range, rating
-  * *Response:* System displays filtered results with pagination
+- **Сценарий 1:** Текстовый поиск
+* *Стимул:* Пользователь вводит поисковый запрос в поле поиска
+* *Ответ:* Система возвращает релевантные книги, соответствующие названию, автору или описанию
+- **Сценарий 2:** Расширенная фильтрация
+* *Стимул:* Пользователь применяет фильтры по жанру, ценовому диапазону, рейтингу
+* *Ответ:* Система отображает отфильтрованные результаты с разбивкой на страницы
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **SRCH-1**: System shall provide full-text search across book titles and authors
-- **SRCH-2**: System shall support filtering by multiple criteria simultaneously
-- **SRCH-3**: System shall display search results with relevance scoring
-- **SRCH-4**: System shall maintain search history for authenticated users
+- **SRCH-1**: Система должна обеспечивать полнотекстовый поиск по названиям книг и авторам
+- **SRCH-2**: Система должна поддерживать одновременную фильтрацию по нескольким критериям
+- **SRCH-3**: Система должна отображать результаты поиска с оценкой релевантности
+- **SRCH-4**: Система должна сохранять историю поиска для аутентифицированных пользователей
 
-### Shopping Cart Management
+### Управление корзиной покупок
 
-#### Description and Priority
-Manages user shopping cart operations including add, update, and remove items. Priority: High
+#### Описание и приоритет
+Управляет операциями с корзиной покупок пользователя, включая добавление, обновление и удаление товаров. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Adding Item to Cart
-  * *Stimulus:* User clicks "Add to Cart" for a book
-  * *Response:* System adds item to cart, updates cart total, shows confirmation
-- **Scenario 2:** Updating Cart Quantity
-  * *Stimulus:* User modifies quantity of cart item
-  * *Response:* System recalculates subtotal, validates stock availability
+- **Сценарий 1:** Добавление товара в корзину
+* *Стимул:* Пользователь нажимает кнопку «Добавить в корзину» для книги
+* *Ответ:* Система добавляет товар в корзину, обновляет общую сумму в корзине, выводит подтверждение
+- **Сценарий 2:** Обновление количества товара в корзине
+* *Стимул:* Пользователь изменяет количество товара в корзине
+* *Ответ:* Система пересчитывает промежуточный итог, проверяет наличие товара на складе
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **CART-1**: System shall maintain cart contents across user sessions
-- **CART-2**: System shall validate stock availability before cart operations
-- **CART-3**: System shall calculate real-time pricing including taxes
-- **CART-4**: System shall prevent adding out-of-stock items to cart
-- **CART-5**: System shall support multiple cart items with quantity adjustments
+- **CART-1**: Система должна сохранять содержимое корзины между сеансами пользователя
+- **CART-2**: Система должна проверять наличие товара на складе перед операциями с корзиной
+- **CART-3**: Система должна рассчитывать цены в режиме реального времени, включая налоги
+- **CART-4**: Система должна предотвращать добавление в корзину товаров, которых нет в наличии
+- **CART-5**: Система должна поддерживать несколько товаров в корзине с указанием количества корректировки
 
-### 3.5 Order Processing System
+### 3.5 Система обработки заказов
 
-#### Description and Priority
+#### Описание и приоритет
 
-Handles complete order lifecycle from creation to fulfillment. Priority: High
+Обслуживает весь жизненный цикл заказа от создания до выполнения. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Order Creation
-  * *Stimulus:* User proceeds to checkout from cart
-  * *Response:* System creates order, reserves stock, generates order number
-- **Scenario 2:** Payment Processing
-  * *Stimulus:* User submits payment information
-  * *Response:* System processes payment, updates order status, sends confirmation
+- **Сценарий 1:** Создание заказа
+* *Стимул:* Пользователь переходит к оформлению заказа из корзины
+* *Ответ:* Система создает заказ, резервирует товар, генерирует номер заказа
+- **Сценарий 2:** Обработка платежа
+* *Стимул:* Пользователь отправляет информацию об оплате
+* *Ответ:* Система обрабатывает платеж, обновляет статус заказа, отправляет подтверждение
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **ORD-1**: System shall generate unique order numbers sequentially
-- **ORD-2**: System shall maintain order history for each user
-- **ORD-3**: System shall update inventory upon successful order completion
+- **ORD-1**: Система должна последовательно генерировать уникальные номера заказов
+- **ORD-2**: Система должна вести историю заказов для каждого пользователя
+- **ORD-3**: Система должна обновлять инвентарь после успешного выполнения заказа
 
-### Review and Rating System
+### Система отзывов и оценок
 
-#### Description and Priority
+#### Описание и приоритет
 
-Allows users to submit reviews and ratings for purchased books. Priority: Medium
+Позволяет пользователям оставлять отзывы и оценки приобретенных книг. Приоритет: Средний
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Submitting Review
-  * *Stimulus:* User writes review and rating for purchased book
-  * *Response:* System validates purchase, saves review, updates book rating
-- **Scenario 2:** Review Moderation
-  * *Stimulus:* Admin flags inappropriate review
-  * *Response:* System hides review pending moderation
+- **Сценарий 1:** Отправка отзыва
+* *Стимул:* Пользователь пишет отзыв и оценивает купленную книгу
+* *Ответ:* Система подтверждает покупку, сохраняет отзыв, обновляет рейтинг книги
+- **Сценарий 2:** Модерация отзыва
+* *Стимул:* Администратор отмечает отзыв как несоответствующий
+* *Ответ:* Система скрывает отзыв, ожидающий модерации
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **REV-1**: System shall allow reviews only from verified purchasers
-- **REV-2**: System shall calculate and display average ratings for books
-- **REV-3**: System shall support review reporting and moderation
-- **REV-4**: System shall limit one review per user per book
-- **REV-5**: System shall sort reviews by helpfulness and date
+- **REV-1**: Система должна разрешать оставлять отзывы только от проверенных покупателей
+- **REV-2**: Система должна рассчитывать и отображать средние оценки книг
+- **REV-3**: Система должна поддерживать отправку отзывов и их модерацию
+- **REV-4**: Система должна ограничивать один отзыв от пользователя на книгу
+- **REV-5**: Система должна сортировать отзывы по полезности и дате
 
-### Wishlist Functionality
+### Функциональность списка желаний
 
-#### Description and Priority
+#### Описание и приоритет
 
-Enables users to create and manage personal book wishlists. Priority: Medium
+Позволяет пользователям создавать и управлять личными списками желаний книг. Приоритет: Средний
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Adding to Wishlist
-  * *Stimulus:* User clicks "Add to Wishlist" on book page
-  * *Response:* System adds book to user's wishlist, shows confirmation
-- **Scenario 2:** Wishlist to Cart
-  * *Stimulus:* User selects multiple items from wishlist to add to cart
-  * *Response:* System moves selected items to shopping cart
+- **Сценарий 1:** Добавление в список желаний
+* *Стимул:* Пользователь нажимает кнопку «Добавить в список желаний» на странице книги
+* *Ответ:* Система добавляет книгу в список желаний пользователя, выводит подтверждение
+- **Сценарий 2:** Добавление списка желаний в корзину
+* *Стимул:* Пользователь выбирает несколько товаров из списка желаний для добавления в корзину
+* *Ответ:* Система перемещает выбранные товары в корзину
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **WISH-1**: System shall support multiple named wishlists per user
-- **WISH-2**: System shall provide wishlist sharing capabilities
-- **WISH-3**: System shall notify users of price drops on wishlisted items
-- **WISH-4**: System shall display wishlist item availability status
-- **WISH-5**: System shall support wishlist item prioritization
+- **ЖЕЛАНИЕ-1**: Система должна поддерживать несколько именованных списков желаний для одного пользователя
+- **ЖЕЛАНИЕ-2**: Система должна предоставлять возможность делиться списками желаний
+- **ЖЕЛАНИЕ-3**: Система должна уведомлять пользователей о снижении цен на товары из списка желаний
+- **ЖЕЛАНИЕ-4**: Система должна отображать статус доступности товаров из списка желаний
+- **ЖЕЛАНИЕ-5**: Система должна поддерживать товары из списка желаний Приоритизация
 
-### Administrative Dashboard
+### Панель управления администратора
 
-#### Description and Priority
+#### Описание и приоритет
 
-Provides comprehensive management interface for administrative users. Priority: High
+Обеспечивает комплексный интерфейс управления для администраторов. Приоритет: Высокий
 
-#### Stimulus/Response Sequences
+#### Последовательности стимулов/ответов
 
-- **Scenario 1:** Sales Reporting
-  * *Stimulus:* Admin requests sales report for specific period
-  * *Response:* System generates report with charts and export options
-- **Scenario 2:** Inventory Management
-  * *Stimulus:* Admin updates stock levels for multiple books
-  * *Response:* System updates inventory, triggers restock alerts if needed
+- **Сценарий 1:** Отчётность по продажам
+* *Стимул:* Администратор запрашивает отчёт по продажам за определённый период
+* *Ответ:* Система генерирует отчёт с диаграммами и опциями экспорта
+- **Сценарий 2:** Управление запасами
+* *Стимул:* Администратор обновляет уровни запасов для нескольких книг
+* *Ответ:* Система обновляет запасы, при необходимости запускает оповещения о пополнении запасов
 
-#### Functional Requirements
+#### Функциональные требования
 
-- **ADMIN-1**: System shall provide real-time sales analytics and dashboards
-- **ADMIN-2**: System shall support bulk operations for inventory management
-- **ADMIN-3**: System shall generate PDF and Excel reports
-- **ADMIN-4**: System shall provide user management capabilities for admins
-- **ADMIN-5**: System shall maintain audit logs of all administrative actions
+- **АДМИН-1**: Система должна предоставлять аналитику продаж в режиме реального времени и информационные панели
+- **АДМИН-2**: Система должна поддерживать массовые операции для управления запасами
+- **АДМИН-3**: Система должна генерировать отчёты в форматах PDF и Excel
+- **АДМИН-4**: Система должна предоставлять администраторам возможности управления пользователями
+- **АДМИН-5**: Система должна вести журналы аудита всех административных действий
