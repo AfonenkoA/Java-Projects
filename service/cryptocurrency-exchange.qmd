@@ -1,10 +1,10 @@
 # Криптовалютная биржа
 
-## 2. Overall Description
+## Overall Description
 
 The project implements a comprehensive cryptocurrency exchange platform that enables users to trade various cryptocurrencies securely. The system will support real-time trading, portfolio management, and administrative oversight.
 
-## 3. Product Functions
+## Product Functions
 
 - User registration and authentication with two-factor security
 - Cryptocurrency wallet management

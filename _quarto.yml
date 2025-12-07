@@ -2,13 +2,13 @@ project:
   type: book
 
 book:
-  title: "Курсовые проекты Java"
+  title: Курсовые проекты Java
   author:
     - Афоненко Анатолий
   date: today
   chapters:
     - index.qmd
-    - report.qmd
+#    - report.qmd
     - part: Разработка
       chapters:
         - code/ai-chat.qmd
@@ -18,7 +18,7 @@ book:
         - deal/auto.qmd
         - deal/bulletin-board.qmd
         - deal/realt.qmd
-    - part: "Азартные игры"
+    - part: Игры
       chapters:    
         - gambling/betting.qmd
         - gambling/casino.qmd
@@ -55,7 +55,7 @@ book:
         - service/calendar.qmd
         - service/cinema.qmd
         - service/cloud-storage.qmd
-        - service/cryptocurrency-exchange.qmd
+#        - service/cryptocurrency-exchange.qmd
         - service/discount-cards.qmd
         - service/discounts-and-promotions.qmd
         - service/education.qmd
@@ -69,7 +69,7 @@ book:
         - service/notes.qmd
         - service/polls.qmd
         - service/quiz.qmd
-    - part: "Социальные сети"
+    - part: Социальные сети
       chapters:
         - social-network/classic.qmd
         - social-network/dating.qmd
